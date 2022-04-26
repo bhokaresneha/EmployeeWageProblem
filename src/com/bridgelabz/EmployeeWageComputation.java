@@ -7,6 +7,7 @@ public class EmployeeWageComputation {
     static int attendance;
     static int wage_per_hr=20;
     static int work_per_HR=8;
+
     public static void main(String[] args) {
         // creating object of class
         EmployeeWageComputation ew=new EmployeeWageComputation();
@@ -21,6 +22,6 @@ public class EmployeeWageComputation {
             System.out.println("Employee is present and Daily Wage Is " + dailyWage);
         else
             System.out.println("Employee is Absent and Daily Wage Is " + dailyWage);
-
+       
     }
 }
