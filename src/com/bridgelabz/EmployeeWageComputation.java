@@ -4,22 +4,27 @@ public class EmployeeWageComputation
 {
     // Variable initialization
     static int attendance;
-    static  int WAGE_PER_HOUR = 20;
-    static final int MAX_WORKING_DAYS = 20;
-    static final int MAX_WORKING_HRS = 100;
 
-    public void totalWageCalculation()
+    public void totalWageCalculation(String companyName,int wagePerHour,int maxWorkingDays,int maxWorkingHour)
     {
-     // local variable initialization
-        int workingHrs = 0;
+
+        //local variable initialization
         int monthlyWages = 0;
         int totalWorkingHrs=0;
+        int workingHrs = 0;
 
-        // creating oject of random class
+        //Displaying data passed to totalWageCalculation() Method
+        System.out.println("Data of " + companyName + " employee");
+        System.err.println("Wage per hour:" + wagePerHour);
+        System.out.println("Maximum working days:" + maxWorkingDays);
+        System.out.println("Maximum working hours:" + maxWorkingHour);
+        System.out.println("Company Name =>"+companyName+"\t Wage per hour =>"+wagePerHour+"\t Maximum working days =>"+maxWorkingDays+"\t Maximum working hours"+maxWorkingHour);
+
+        // creating object of Random() class
         Random random = new Random();
 
         //generate random no using random() function
-        for (int i = 1; i<= MAX_WORKING_DAYS && totalWorkingHrs<MAX_WORKING_HRS ;i++)
+        for (int i = 1; i<= maxWorkingDays && totalWorkingHrs<maxWorkingHour ;i++)
         {
             //Calculating Total Working Hrs
             totalWorkingHrs=totalWorkingHrs+workingHrs;
@@ -27,7 +32,6 @@ public class EmployeeWageComputation
             attendance  = random.nextInt(3);
             switch (attendance)
             {
-
                 case 0:
                     workingHrs = 0;
                     System.out.println("Employee is absent");
@@ -43,7 +47,7 @@ public class EmployeeWageComputation
             }
 
            //Calculating Daily Wage
-            dailyWage = workingHrs * WAGE_PER_HOUR;
+            dailyWage = workingHrs * wagePerHour;
             System.out.println("Daily wage is " + dailyWage);
 
             //Calculating Monthly Wage
@@ -51,7 +55,7 @@ public class EmployeeWageComputation
 
             System.out.println("day=>"+i+"\t working hrs =>"+workingHrs+"\t Daily wage="+dailyWage+"\t Total working Hrs"+totalWorkingHrs);
         }
-        System.out.println("Monthly Wages:: "+monthlyWages);
+        System.out.println("Employees Monthly Wage of Company "+companyName+"is:: "+monthlyWages);
 
     }
 }
@@ -61,7 +65,10 @@ public class EmployeeWageComputation
         // creating object of class
         EmployeeWageComputation ew=new EmployeeWageComputation();
 
-        //calling totalWageCalculation() method using class object
-        ew.totalWageCalculation();
+        //Passing values to the totalWageCalculation()Method
+        ew.totalWageCalculation("Amazon",20,30,100);
+        ew.totalWageCalculation("Flipkart",40,20,100);
+        ew.totalWageCalculation("BigBazaar", 60, 25, 100);
+
     }
 }
