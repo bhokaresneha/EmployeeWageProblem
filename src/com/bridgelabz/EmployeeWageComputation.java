@@ -16,7 +16,7 @@ public class EmployeeWageComputation {
         //generate random no using random() function
         for (int i = 1; i<= WORKING_DAYS_PER_MONTH;i++){
             int dailyWage = 0;
-            attendance = (int) Math.floor(Math.random() * 10) % 3;
+        attendance  = random.nextInt(3);
             switch (attendance) {
                 case 0:
                     workingHrs = 0;
