@@ -14,7 +14,7 @@ public class EmployeeWageComputation {
         // creating oject of random class
         Random random = new Random();
         //generate random no using random() function
-        attendance = (int) Math.floor(Math.random() * 10) % 3;
+        attendance  = random.nextInt(3);
         if (attendance == 0){
             System.out.println("Employee is absent");
             workingHrs = 0;
