@@ -36,5 +36,6 @@ public class EmployeeWageComputation {
             monthlyWages = monthlyWages + dailyWage;
         }
         System.out.println("Monthly Wages:: "+monthlyWages);
+
     }
 }
