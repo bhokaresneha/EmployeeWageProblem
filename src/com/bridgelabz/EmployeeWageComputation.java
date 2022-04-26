@@ -4,9 +4,6 @@ public class EmployeeWageComputation
 {
     // Variable initialization
     static int attendance;
-    //static  int WAGE_PER_HOUR = 20;
-    //static final int MAX_WORKING_DAYS = 20;
-    //static final int MAX_WORKING_HRS = 100;
 
     public void totalWageCalculation(String companyName,int wagePerHour,int maxWorkingDays,int maxWorkingHour)
     {
@@ -29,6 +26,7 @@ public class EmployeeWageComputation
         //generate random no using random() function
         for (int i = 1; i<= maxWorkingDays && totalWorkingHrs<maxWorkingHour ;i++)
         {
+            //Calculating Total Working Hrs
             totalWorkingHrs=totalWorkingHrs+workingHrs;
             int dailyWage = 0;
             attendance  = random.nextInt(3);
@@ -60,6 +58,7 @@ public class EmployeeWageComputation
         System.out.println("Employees Monthly Wage of Company "+companyName+"is:: "+monthlyWages);
 
     }
+}
 
     public static void main(String[] args)
     {
