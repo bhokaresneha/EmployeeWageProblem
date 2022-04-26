@@ -6,11 +6,11 @@ public class EmployeeWageComputation {
     // Variable initialization
     static int attendance;
     static  int WAGE_PER_HOUR = 20;
+    static int work_per_HR=8;
 
     public static void main(String[] args) {
         // creating object of class
         EmployeeWageComputation ew=new EmployeeWageComputation();
-        int workingHrs = 0;
         // creating oject of random class
         Random random = new Random();
         //generate random no using random() function
