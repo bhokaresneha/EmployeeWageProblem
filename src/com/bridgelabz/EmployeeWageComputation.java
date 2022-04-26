@@ -21,11 +21,13 @@ public class EmployeeWageComputation
         //generate random no using random() function
         for (int i = 1; i<= MAX_WORKING_DAYS && totalWorkingHrs<MAX_WORKING_HRS ;i++)
         {
+            //Calculating Total Working Hrs
             totalWorkingHrs=totalWorkingHrs+workingHrs;
             int dailyWage = 0;
             attendance  = random.nextInt(3);
             switch (attendance)
             {
+
                 case 0:
                     workingHrs = 0;
                     System.out.println("Employee is absent");
@@ -52,6 +54,7 @@ public class EmployeeWageComputation
         System.out.println("Monthly Wages:: "+monthlyWages);
 
     }
+}
 
     public static void main(String[] args)
     {
