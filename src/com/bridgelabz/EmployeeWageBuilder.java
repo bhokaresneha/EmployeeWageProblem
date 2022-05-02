@@ -2,14 +2,20 @@ package com.bridgelabz;
 
 import java.util.Random;
 
-public class EmployeeWageBuilder
+interface IEmployeeWageComputation
 {
+    public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs);
 
+    public void calculateTotalWage();
+}
+
+
+public class EmployeeWageBuilder implements IEmployeeWageComputation
+{
     // instance variables
     int noOfCompanies, index;
-    Random random =new Random();
     CompanyEmpWage[] companies;
-
+    Random random= new Random();
     public EmployeeWageBuilder(int noOfCompanies)
     {
         this.noOfCompanies = noOfCompanies;
@@ -17,13 +23,14 @@ public class EmployeeWageBuilder
         index = 0;
     }
 
-    void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs)
+    public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs)
     {
         companies[index++] = new CompanyEmpWage(companyName, wagePerHr, maxWorkingDays, maxWorkingHrs);
     }
 
 
-    void calculateTotalWage()
+
+    public void calculateTotalWage()
     {
         for (CompanyEmpWage company : companies)
         {
@@ -56,19 +63,20 @@ public class EmployeeWageBuilder
                     workingHrs = 8;
                     break;
             }
+            
             int wage = workingHrs * companyEmpWage.WAGE_PER_HR;
             totalWage += wage;
-            System.out.printf("|%5d   |    %5d  |    %5d  |    %5d  |\n", day, workingHrs, wage, totalWorkingHrs + workingHrs);
+            System.out.printf("%5d       %5d      %5d      %5d\n", day, workingHrs, wage, totalWorkingHrs + workingHrs);
         }
         return totalWage;
     }
 
     public static void main(String args[])
     {
-        EmployeeWageBuilder employeeWageBuilder = new EmployeeWageBuilder(3);
-        employeeWageBuilder.addCompany("Microsoft", 4, 30, 100);
-        employeeWageBuilder.addCompany("Google", 5, 40, 170);
-        employeeWageBuilder.addCompany("Apple", 9, 10, 70);
-        employeeWageBuilder.calculateTotalWage();
+        EmployeeWageBuilder employeewaagecomputation = new EmployeeWageBuilder(3);
+        employeewaagecomputation.addCompany("TCS", 4, 30, 100);
+        employeewaagecomputation.addCompany("Bridgelabz", 5, 40, 170);
+        employeewaagecomputation.addCompany("Wipro", 9, 10, 70);
+        employeewaagecomputation.calculateTotalWage();
     }
 }
