@@ -4,9 +4,7 @@ import java.util.Random;
 
 public class EmployeeWageBuilder
 {
-    // class constants
-    public static final int PART_TIME = 1;
-    public static final int FULL_TIME = 2;
+
     // instance variables
     int noOfCompanies, index;
     Random random =new Random();
